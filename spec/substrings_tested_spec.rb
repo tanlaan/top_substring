@@ -26,5 +26,17 @@ RSpec.describe "Sub Strings Exercise" do
     end
   end
   
+  describe 'matches multiple words to substrings' do
+    it 'returns more than one match' do
+      expect(substrings('aa', ['a', 'aa'])).to eq({'a'=>2, 'aa'=>1})
+    end
+    xit 'returns correctly with multiple kinds of matches' do
+      phrase = 'abaca'
+      word_list = ['a', 'ba', 'd']
+      expectation = {'a'=>3, 'ba'=>1}
+      expect(substrings(phrase, word_list)).to eq(expectation)
+    end
+  end
+  
 end
 
