@@ -1,0 +1,13 @@
+# Sub String Project
+## Ruby porject from The Odin Project
+
+Create the method substrings, which takes as it's arguments a string to search subtrings within as well as an array of words to search for (case insensitive).
+
+It will return a hash of the substrings found in the array as the key, with the value being the amount of times it was found in the given string.
+
+### Input
+substrings('Hello World', dictionary)
+
+### Output
+{ 'he':1 }
+
