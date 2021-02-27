@@ -30,11 +30,34 @@ RSpec.describe "Sub Strings Exercise" do
     it 'returns more than one match' do
       expect(substrings('aa', ['a', 'aa'])).to eq({'a'=>2, 'aa'=>1})
     end
-    xit 'returns correctly with multiple kinds of matches' do
+    it 'returns correctly with multiple kinds of matches' do
       phrase = 'abaca'
       word_list = ['a', 'ba', 'd']
       expectation = {'a'=>3, 'ba'=>1}
       expect(substrings(phrase, word_list)).to eq(expectation)
+    end
+  end
+
+  describe 'Case insensitive' do
+    it 'matches even if phrase is all capital' do
+      expect(substrings('A', ['a'])).to eq({'a'=>1})
+    end
+    it 'matches variable case phrases' do
+      phrase = 'ABaCa'
+      word_list = ['a', 'ba', 'd']
+      expectation = {'a'=>3, 'ba'=>1}
+      expect(substrings(phrase, word_list)).to eq(expectation)
+    end
+  end
+  
+  describe 'The Odin Project Example' do
+    it 'matches a single word' do
+      dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+      expect(substrings("below", dictionary)).to eq({ "below" => 1, "low" => 1 })
+    end
+    it 'matches a phrase' do
+      dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+      expect(substrings("Howdy partner, sit down! How's it going?", dictionary)).to eq({ "down" => 1, "go" => 1, "going" => 1, "how" => 2, "howdy" => 1, "it" => 2, "i" => 3, "own" => 1, "part" => 1, "partner" => 1, "sit" => 1 })
     end
   end
   

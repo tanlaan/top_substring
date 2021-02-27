@@ -4,8 +4,8 @@ def substrings(phrase, word_list)
 #  phrase.split('').map do |sub|
   word_list.each do |word|
     (0..(phrase.length - word.length)).each do |i|
-      sub = phrase.slice(i, word.length)
-      if word_list.include? sub
+      sub = phrase.slice(i, word.length).downcase
+      if word == sub
         if matches[sub]
           matches[sub] += 1
         else
